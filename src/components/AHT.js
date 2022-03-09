@@ -4,14 +4,19 @@ class AHT extends React.Component {
     state = {
         name: 'AHT'
     }
+
+    handleChange = (e) => {
+      this.setState({
+        name: e.target.value
+      })
+    }
   render() {
     return ( 
         <div>
-            <button onClick={activateUser}>
-                Activate User
-            </button>
-
-            <p>This is {this.state.name}</p>
+          <div>
+            <input type="text" onChange={(e) => this.handleChange(e)} />
+          </div>
+            <p>This is {this.state.name }</p>
         </div>
     )
   }
