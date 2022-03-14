@@ -1,11 +1,28 @@
 import React from 'react';
 
 class AHT2 extends React.Component {
+    handleClick = (e) => {
+        e.preventDefault();
+        this.props.addNewCouse('Python')
+    }
   render() {
-    console.log('Props AHT: ', this.props.name)
+    let ahtCouse =  this.props.ahtCouse;
+    let checkCouse = this.props.check;
     return ( 
         <div>
-          <h2>AHT 2</h2>
+            {
+                <>
+                <button onClick={(e)=> this.handleClick(e)}>Add couse</button>
+                {/* {ahtCouse.map((item, index) => {
+                    return(
+                        <>
+                            
+                        </>
+                    )
+                })} */}
+                {console.log(ahtCouse)}
+                </>
+            }
         </div>
     )
   }
